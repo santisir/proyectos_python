@@ -1,12 +1,14 @@
 from math import ceil
 from operator import le
 from turtle import *
+import random as rd
 
-speed(-2)
+speed(-3)
 
 def tree(size, levels, angle):
-    if levels==0: 
-        color('green')
+    if levels==0:
+        colors = ['red', 'blue', 'yellow', 'green', 'pink', 'brown', 'orange', 'grey', 'purple'] 
+        color(rd.choice(colors))
         dot(size)
         color('black')
 
@@ -44,9 +46,12 @@ def snowflake_side(lenght, levels):
 def create_snowflake(lenght, sides):
     colors = ['red', 'blue', 'yellow', 'green', 'pink', 'brown', 'orange', 'grey', 'purple']
     for i in range(sides):
-        # color(colors[i])
-        snowflake_side(lenght, 2)
+        color(rd.choice(colors))
+        snowflake_side(lenght, 4)
         right(360/sides)
 
-create_snowflake(100, 6)
+# create_snowflake(150, 5)
+tree(100,7,70)
+left(180)
+tree(100,7,70)
 mainloop()
